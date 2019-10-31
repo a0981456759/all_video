@@ -1,0 +1,165 @@
+<html>
+  <head>
+    <title>Video Date Selector</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/bootstrap-material-design.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/ripples.min.css"
+    />
+
+    <link rel="stylesheet" href="./bootstrap-material-datetimepicker.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,500"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-1.12.3.min.js"
+      integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.min.js"></script>
+    <!-- <script type="text/javascript" src="https://rawgit.com/FezVrasta/bootstrap-material-design/master/dist/js/material.min.js"></script> -->
+    <script
+      type="text/javascript"
+      src="https://momentjs.com/downloads/moment-with-locales.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./bootstrap-material-datetimepicker.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-datetimepicker/2.7.1/css/bootstrap-material-datetimepicker.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-datetimepicker/2.7.1/js/bootstrap-material-datetimepicker.js"></script>
+    <style>
+      body {
+        padding-top: 70px;
+        font-family: "Roboto", sans-serif;
+      }
+
+      h2 {
+        padding: 0 20px 10px 20px;
+        font-size: 20px;
+        font-weight: 400;
+      }
+
+      .form-control-wrapper {
+        margin: 10px 20px;
+      }
+
+      @media (max-width: 300px) {
+        .well {
+          margin: 0;
+        }
+      }
+
+      .btn-dark {
+        background-color: rgba(120, 120, 197, 0.87);
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container well">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Date Video</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container well">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Video Date Selector</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-control-wrapper">
+            <input
+              type="text"
+              id="date"
+              class="form-control floating-label"
+              placeholder="Select Date"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <p>
+            <button id="commit" type="button" class="btn btn-dark">
+              Date Commit
+            </button>
+          </p>
+        </div>
+      </div>
+
+      <div class="container well">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Select A Date to Get Video</h2>
+          </div>
+        </div>
+        <div class="row" id="video" hidden="true">
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-control-wrapper">
+                  <div class="container"></div>
+                  <iframe
+                    width="320"
+                    height="240"
+                    src="https://drive.google.com/file/d/1yRrnNUjjQwejDwjKwl91-49jc8QeBKSR/preview"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <!-- <div class="col-md-12"> -->
+              <div class="form-control-wrapper"></div>
+            </div>
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("#date").bootstrapMaterialDatePicker({ weekStart: 0, time: false });
+        $("#commit").click(
+          function() {
+            $("#video").show();
+            console.log("success");
+          }
+
+          //   $("#video").show();
+        );
+
+        $.material.init();
+      });
+    </script>
+  </body>
+</html>
